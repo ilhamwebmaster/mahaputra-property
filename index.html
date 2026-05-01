@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Mahaputra Property | Perumahan Impian di Tarogong Garut</title>
+    <!-- Tailwind CSS + Google Fonts + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0A2B4E',
+                        'primary-accent': '#1E4A76',
+                        'soft-white': '#F8FAFC',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 20px 35px -12px rgba(0, 0, 0, 0.08)',
+                        'cta': '0 10px 25px -5px rgba(37, 99, 235, 0.3)',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(10, 43, 78, 0.85) 0%, rgba(10, 43, 78, 0.65) 100%);
+        }
+        .hover-scale {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .hover-scale:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.15);
+        }
+        .whatsapp-glow:hover {
+            box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.4);
+            transition: all 0.2s;
+        }
+        .btn-whatsapp {
+            background: #25D366;
+            transition: all 0.2s;
+        }
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: scale(1.02);
+        }
+        /* transisi mobile menu */
+        .mobile-menu {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-gray-800">
+
+    <!-- ========== NAVBAR RESPONSIVE DENGAN HAMBURGER MENU ========== -->
+    <nav class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-30 border-b border-gray-100">
+        <div class="container mx-auto px-5 py-3 flex justify-between items-center">
+            <!-- Logo & Brand -->
+            <div class="flex items-center gap-2">
+                <i class="fas fa-building text-primary-dark text-2xl"></i>
+                <span class="font-bold text-xl text-primary-dark tracking-tight">Mahaputra<span class="text-gray-600"> Property</span></span>
+            </div>
+
+            <!-- Desktop Menu - hidden on mobile -->
+            <div class="hidden md:flex gap-6 text-sm font-medium text-gray-600">
+                <a href="#fitur" class="hover:text-primary-dark transition">Fitur</a>
+                <a href="#tipe" class="hover:text-primary-dark transition">Tipe Rumah</a>
+                <a href="#simulasi" class="hover:text-primary-dark transition">Simulasi</a>
+                <a href="#akses" class="hover:text-primary-dark transition">Akses</a>
+            </div>
+
+            <!-- Tombol WA desktop + Hamburger untuk mobile -->
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/6281234567890?text=Halo%20Mahaputra%20Property,%20saya%20tertarik%20dengan%20perumahan%20di%20Tarogong%20Garut" target="_blank" class="bg-primary-dark text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md flex items-center gap-2 hover:bg-primary-accent transition hidden sm:flex">
+                    <i class="fab fa-whatsapp"></i> Hubungi
+                </a>
+                <!-- Hamburger Icon (Mobile) -->
+                <button id="menuBtn" class="block md:hidden text-primary-dark text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel (hidden by default) -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-100 py-4 px-6 flex flex-col gap-4 shadow-lg mobile-menu">
+            <a href="#fitur" class="text-gray-700 font-medium hover:text-primary-dark transition py-2 border-b border-gray-50">✨ Fitur Unggulan</a>
+            <a href="#tipe" class="text-gray-700 font-medium hover:text-primary-dark transition py-2 border-b border-gray-50">🏡 Tipe Rumah</a>
+            <a href="#simulasi" class="text-gray-700 font-medium hover:text-primary-dark transition py-2 border-b border-gray-50">💰 Simulasi Cicilan</a>
+            <a href="#akses" class="text-gray-700 font-medium hover:text-primary-dark transition py-2 border-b border-gray-50">📍 Akses & Lokasi</a>
+            <a href="https://wa.me/6281234567890?text=Halo%20Mahaputra%20Property,%20saya%20tertarik%20dengan%20perumahan%20di%20Tarogong%20Garut" target="_blank" class="bg-primary-dark text-white text-center py-2 rounded-full font-semibold mt-2 flex items-center justify-center gap-2">
+                <i class="fab fa-whatsapp"></i> Chat WA Sekarang
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ========== 1. Hero Section ========== -->
+        <section class="relative bg-cover bg-center min-h-[85vh] flex items-center" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&auto=format'); background-blend-mode: overlay;">
+            <div class="absolute inset-0 hero-overlay"></div>
+            <div class="container mx-auto px-6 md:px-12 relative z-10 text-white">
+                <div class="max-w-3xl">
+                    <span class="inline-block bg-yellow-500 text-primary-dark text-xs font-bold px-3 py-1 rounded-full mb-4 shadow-md">✨ Eksklusif | Tarogong Garut ✨</span>
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-5 drop-shadow-lg">
+                        Wujudkan Rumah Impian <br> di Pusat Strategis Kota
+                    </h1>
+                    <p class="text-xl md:text-2xl font-light mb-4 drop-shadow">Hanya 10 Menit dari Pintu Tol • Kawasan Premium</p>
+                    <p class="text-lg md:text-xl text-gray-100 mb-8 max-w-xl">Mahaputra Property – Hunian modern dengan konsep cluster, akses mudah, dan lingkungan asri di jantung Tarogong Garut, Jawa Barat.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#simulasi" class="bg-white text-primary-dark font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-gray-100 transition flex items-center gap-2">
+                            <i class="fas fa-file-pdf"></i> Unduh Brosur Lengkap
+                        </a>
+                        <a href="https://wa.me/6281234567890?text=Halo%20Mahaputra,%20saya%20ingin%20jadwal%20survey%20lokasi%20perumahan%20di%20Tarogong" target="_blank" class="bg-primary-dark/90 backdrop-blur-sm border border-white/40 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-primary-dark transition flex items-center gap-2">
+                            <i class="fas fa-calendar-check"></i> Jadwalkan Survey
+                        </a>
+                    </div>
+                    <div class="mt-10 flex items-center gap-5 text-sm">
+                        <span class="flex items-center gap-1"><i class="fas fa-check-circle text-green-400"></i> Sertifikat SHM</span>
+                        <span class="flex items-center gap-1"><i class="fas fa-check-circle text-green-400"></i> 0% DP Terbatas</span>
+                        <span class="flex items-center gap-1"><i class="fas fa-check-circle text-green-400"></i> Developer Terpercaya</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 2. Fitur Perumahan ========== -->
+        <section id="fitur" class="py-20 bg-soft-white scroll-mt-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-primary-dark font-bold text-sm uppercase tracking-wider bg-primary-dark/10 px-4 py-1 rounded-full">Keunggulan Hunian</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary-dark mt-3 mb-4">Spesifikasi & Fitur Utama</h2>
+                    <p class="text-gray-600">Nikmati kenyamanan modern dengan teknologi dan keamanan terbaik.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-card border border-gray-100 hover-scale text-center">
+                        <div class="w-16 h-16 bg-primary-dark/10 rounded-full flex items-center justify-center mx-auto mb-5"><i class="fas fa-microchip text-3xl text-primary-dark"></i></div>
+                        <h3 class="text-xl font-bold text-primary-dark">Smart Home System</h3>
+                        <p class="text-gray-500 mt-2">Kontrol lampu, CCTV, dan akses pintu dari genggaman. Teknologi IoT terintegrasi.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-card border border-gray-100 hover-scale text-center">
+                        <div class="w-16 h-16 bg-primary-dark/10 rounded-full flex items-center justify-center mx-auto mb-5"><i class="fas fa-shield-alt text-3xl text-primary-dark"></i></div>
+                        <h3 class="text-xl font-bold text-primary-dark">Keamanan 24 Jam</h3>
+                        <p class="text-gray-500 mt-2">One Gate System + CCTV高清 + Satpam 24/7, lingkungan aman dan nyaman.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-card border border-gray-100 hover-scale text-center">
+                        <div class="w-16 h-16 bg-primary-dark/10 rounded-full flex items-center justify-center mx-auto mb-5"><i class="fas fa-water text-3xl text-primary-dark"></i></div>
+                        <h3 class="text-xl font-bold text-primary-dark">Bebas Banjir</h3>
+                        <p class="text-gray-500 mt-2">Kawasan resapan air & drainase terintegrasi. Tanah tinggi, zero banjir.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-card border border-gray-100 hover-scale text-center">
+                        <div class="w-16 h-16 bg-primary-dark/10 rounded-full flex items-center justify-center mx-auto mb-5"><i class="fas fa-dumbbell text-3xl text-primary-dark"></i></div>
+                        <h3 class="text-xl font-bold text-primary-dark">Club House Premium</h3>
+                        <p class="text-gray-500 mt-2">Kolam renang, gym, taman bermain & ruang serbaguna untuk keluarga.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 3. Tipe Rumah & Denah ( dengan Gambar Tampak Depan & Gambar Denah ) ========== -->
+        <section id="tipe" class="py-20 bg-white scroll-mt-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-primary-dark font-bold text-sm uppercase tracking-wider bg-primary-dark/10 px-4 py-1 rounded-full">Pilihan Hunian</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary-dark mt-3">Tipe Rumah & Denah Eksklusif</h2>
+                    <p class="text-gray-600">Dua tipe pilihan dengan desain fungsional dan ruang luas.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-10">
+                    <!-- Tipe 45/90 -->
+                    <div class="bg-white rounded-2xl shadow-card overflow-hidden border border-gray-100 hover-scale">
+                        <div class="bg-primary-dark px-6 py-4 flex justify-between items-center">
+                            <h3 class="text-2xl font-bold text-white">Tipe 45/90</h3>
+                            <span class="bg-white text-primary-dark text-sm font-bold px-3 py-1 rounded-full">Mulai Rp 495 Juta</span>
+                        </div>
+                        <!-- GAMBAR TAMPAK DEPAN RUMAH (Besar & menarik) -->
+                        <img class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format" alt="Tampak Depan Rumah Tipe 45 Modern">
+                        <div class="p-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <ul class="space-y-2 text-gray-700">
+                                        <li><i class="fas fa-bed text-primary-dark w-6"></i> 2 Kamar Tidur</li>
+                                        <li><i class="fas fa-bath text-primary-dark w-6"></i> 1 Kamar Mandi</li>
+                                        <li><i class="fas fa-car text-primary-dark w-6"></i> Garasi 1 Mobil</li>
+                                        <li><i class="fas fa-tree text-primary-dark w-6"></i> Taman Depan 12m²</li>
+                                        <li><i class="fas fa-ruler-combined text-primary-dark w-6"></i> Luas Bangunan 45m² | Tanah 90m²</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-gray-500 mb-2">★ Gambar Denah Tipe 45</p>
+                                    <!-- DENAH diganti dengan gambar placeholder (bukan grid kotak-kotak) -->
+                                    <img class="w-full rounded-xl border border-gray-200 shadow-sm" src="https://placehold.co/500x300/0A2B4E/white?text=DENAH+TIPE+45%0A2KT+1KM+Garasi+Taman&font=montserrat" alt="Denah Rumah Tipe 45">
+                                </div>
+                            </div>
+                            <div class="mt-6 grid grid-cols-2 gap-3">
+                                <a href="#simulasi" class="text-center bg-gray-100 text-primary-dark py-2 rounded-xl font-medium hover:bg-gray-200 transition">Simulasi Cicilan</a>
+                                <a href="https://wa.me/6281234567890?text=Saya%20tertarik%20Tipe%2045/90%20Mahaputra%20Property" target="_blank" class="text-center bg-primary-dark text-white py-2 rounded-xl font-medium hover:bg-primary-accent transition"><i class="fab fa-whatsapp mr-1"></i> Konsultasi</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tipe 60/120 -->
+                    <div class="bg-white rounded-2xl shadow-card overflow-hidden border border-gray-100 hover-scale">
+                        <div class="bg-primary-dark px-6 py-4 flex justify-between items-center">
+                            <h3 class="text-2xl font-bold text-white">Tipe 60/120</h3>
+                            <span class="bg-white text-primary-dark text-sm font-bold px-3 py-1 rounded-full">Mulai Rp 695 Juta</span>
+                        </div>
+                        <!-- GAMBAR TAMPAK DEPAN RUMAH Tipe 60 -->
+                        <img class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format" alt="Tampak Depan Rumah Mewah Tipe 60">
+                        <div class="p-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <ul class="space-y-2 text-gray-700">
+                                        <li><i class="fas fa-bed text-primary-dark w-6"></i> 3 Kamar Tidur (1 Master)</li>
+                                        <li><i class="fas fa-bath text-primary-dark w-6"></i> 2 Kamar Mandi</li>
+                                        <li><i class="fas fa-car text-primary-dark w-6"></i> Garasi 2 Mobil</li>
+                                        <li><i class="fas fa-tree text-primary-dark w-6"></i> Taman Belakang + Depan</li>
+                                        <li><i class="fas fa-ruler-combined text-primary-dark w-6"></i> Luas Bangunan 60m² | Tanah 120m²</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-gray-500 mb-2">★ Gambar Denah Tipe 60</p>
+                                    <!-- Gambar denah pengganti grid -->
+                                    <img class="w-full rounded-xl border border-gray-200 shadow-sm" src="https://placehold.co/500x300/1E4A76/white?text=DENAH+TIPE+60%0A3KT+2KM+Garasi+Doble&font=montserrat" alt="Denah Rumah Tipe 60">
+                                </div>
+                            </div>
+                            <div class="mt-6 grid grid-cols-2 gap-3">
+                                <a href="#simulasi" class="text-center bg-gray-100 text-primary-dark py-2 rounded-xl font-medium hover:bg-gray-200 transition">Simulasi Cicilan</a>
+                                <a href="https://wa.me/6281234567890?text=Saya%20tertarik%20Tipe%2060/120%20Mahaputra%20Property" target="_blank" class="text-center bg-primary-dark text-white py-2 rounded-xl font-medium hover:bg-primary-accent transition"><i class="fab fa-whatsapp mr-1"></i> Konsultasi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-6 text-sm text-gray-500 italic">* Gambar tampak rumah & denah representatif, untuk detail lebih lanjut hubungi marketing kami.</div>
+            </div>
+        </section>
+
+        <!-- ========== 4. Simulasi Cicilan ========== -->
+        <section id="simulasi" class="py-20 bg-gradient-to-br from-primary-dark to-primary-accent text-white scroll-mt-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center mb-10">
+                    <span class="bg-white/20 backdrop-blur-sm text-white text-sm font-bold px-4 py-1 rounded-full inline-block">💰 Simulasi Cepat</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-3">Cicilan Ringan, Mulai dari Rp 3 Jutaan/bulan</h2>
+                    <p class="text-blue-100 text-lg">Program DP 0% khusus bulan ini • Subsidi bunga terbatas • Proses mudah</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                        <div class="flex justify-between items-start">
+                            <div><h3 class="text-2xl font-bold">Tipe 45/90</h3><p class="text-white/80 text-sm">Harga Rp 495 Juta</p></div>
+                            <i class="fas fa-home text-3xl text-white/60"></i>
+                        </div>
+                        <div class="mt-4 space-y-2">
+                            <div class="flex justify-between border-b border-white/20 pb-1"><span>DP 0% promo</span><span class="font-semibold">Rp 0 (free biaya admin)</span></div>
+                            <div class="flex justify-between border-b border-white/20 pb-1"><span>Cicilan per bulan *</span><span class="font-bold text-xl text-yellow-300">Rp 3,2 Juta</span></div>
+                            <div class="flex justify-between text-sm"><span>Tenor 15 tahun</span><span>Bunga fixed 5%</span></div>
+                        </div>
+                        <p class="text-xs text-white/70 mt-3">*Syarat & ketentuan berlaku, simulasi estimasi KPR</p>
+                        <a href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20simulasi%20detail%20Tipe%2045" target="_blank" class="btn-whatsapp w-full mt-5 inline-block text-center py-2 rounded-full font-semibold text-white shadow-cta transition">Hitung detail via WhatsApp <i class="fab fa-whatsapp ml-1"></i></a>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                        <div class="flex justify-between items-start">
+                            <div><h3 class="text-2xl font-bold">Tipe 60/120</h3><p class="text-white/80 text-sm">Harga Rp 695 Juta</p></div>
+                            <i class="fas fa-home text-3xl text-white/60"></i>
+                        </div>
+                        <div class="mt-4 space-y-2">
+                            <div class="flex justify-between border-b border-white/20 pb-1"><span>DP 0% promo</span><span class="font-semibold">Rp 0 (booking fee 5jt)</span></div>
+                            <div class="flex justify-between border-b border-white/20 pb-1"><span>Cicilan per bulan *</span><span class="font-bold text-xl text-yellow-300">Rp 4,8 Juta</span></div>
+                            <div class="flex justify-between text-sm"><span>Tenor 20 tahun</span><span>Bunga promo 4.9%</span></div>
+                        </div>
+                        <p class="text-xs text-white/70 mt-3">*Syarat & ketentuan berlaku, konsultasi gratis.</p>
+                        <a href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20simulasi%20detail%20Tipe%2060" target="_blank" class="btn-whatsapp w-full mt-5 inline-block text-center py-2 rounded-full font-semibold text-white shadow-cta transition">Cicilan & simulasi <i class="fab fa-whatsapp ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="text-center mt-8 text-white/80 text-sm">✨ Promo terbatas: Gratis biaya provisi & notaris untuk 10 pembeli pertama ✨</div>
+            </div>
+        </section>
+
+        <!-- ========== 5. Aksesibilitas ========== -->
+        <section id="akses" class="py-20 bg-white scroll-mt-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-primary-dark font-bold text-sm bg-primary-dark/10 px-4 py-1 rounded-full">Akses Super Strategis</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary-dark mt-3">Lokasi Unggul Tarogong Garut</h2>
+                    <p class="text-gray-600">Segala kebutuhan hanya dalam genggaman, akses cepat ke pusat kota & fasilitas umum.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="flex flex-col items-center text-center p-5 rounded-xl bg-soft-white border border-gray-100 hover:shadow-md transition">
+                        <div class="bg-primary-dark/10 w-16 h-16 rounded-full flex items-center justify-center mb-3"><i class="fas fa-hospital text-2xl text-primary-dark"></i></div>
+                        <p class="font-bold text-gray-800">RS SMC & RSUD Garut</p><span class="text-primary-dark font-semibold">5 Menit</span>
+                    </div>
+                    <div class="flex flex-col items-center text-center p-5 rounded-xl bg-soft-white border border-gray-100 hover:shadow-md transition">
+                        <div class="bg-primary-dark/10 w-16 h-16 rounded-full flex items-center justify-center mb-3"><i class="fas fa-train text-2xl text-primary-dark"></i></div>
+                        <p class="font-bold text-gray-800">Stasiun Cibatu</p><span class="text-primary-dark font-semibold">10 Menit</span>
+                    </div>
+                    <div class="flex flex-col items-center text-center p-5 rounded-xl bg-soft-white border border-gray-100 hover:shadow-md transition">
+                        <div class="bg-primary-dark/10 w-16 h-16 rounded-full flex items-center justify-center mb-3"><i class="fas fa-shopping-mall text-2xl text-primary-dark"></i></div>
+                        <p class="font-bold text-gray-800">Mall Festival Garut</p><span class="text-primary-dark font-semibold">15 Menit</span>
+                    </div>
+                    <div class="flex flex-col items-center text-center p-5 rounded-xl bg-soft-white border border-gray-100 hover:shadow-md transition">
+                        <div class="bg-primary-dark/10 w-16 h-16 rounded-full flex items-center justify-center mb-3"><i class="fas fa-road text-2xl text-primary-dark"></i></div>
+                        <p class="font-bold text-gray-800">Pintu Tol Tarogong</p><span class="text-primary-dark font-semibold">10 Menit</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 text-center text-gray-500 text-sm">
+                    <div><i class="fas fa-graduation-cap text-primary-dark mr-1"></i> Universitas Garut 8 menit</div>
+                    <div><i class="fas fa-utensils text-primary-dark mr-1"></i> Pusat Kuliner & Pasar Tradisional 7 menit</div>
+                    <div><i class="fas fa-mosque text-primary-dark mr-1"></i> Masjid Raya 6 menit</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 6. CTA + FOMO WhatsApp mencolok ========== -->
+        <section class="py-16 bg-primary-dark relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-4xl mx-auto text-center text-white">
+                    <div class="inline-flex items-center bg-red-500/90 backdrop-blur px-5 py-2 rounded-full text-white font-bold text-sm mb-6 shadow-lg">
+                        <i class="fas fa-exclamation-triangle mr-2 animate-pulse"></i> PROMO HARGA PERDANA! HARGA NAIK BULAN DEPAN
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Sisa <span class="text-yellow-300 underline decoration-2">3 Unit Posisi Hook</span> Saja!</h2>
+                    <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Jangan lewatkan kesempatan memiliki rumah idaman dengan harga spesial dan fasilitas terbaik. Segera booking unit pilihan Anda!</p>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Mahaputra%20Property,%20saya%20tertarik%20dengan%20promo%20sisa%203%20unit%20hook.%20Mohon%20informasi%20lebih%20lanjut" target="_blank" class="btn-whatsapp inline-flex items-center gap-3 px-10 py-5 rounded-full text-2xl font-bold shadow-2xl whatsapp-glow transition-all transform hover:scale-105">
+                        <i class="fab fa-whatsapp text-3xl"></i> Chat Marketing Kami Sekarang
+                    </a>
+                    <div class="flex flex-wrap justify-center gap-6 mt-10 text-sm text-white/80">
+                        <span><i class="fas fa-check-circle text-green-400"></i> Konsultasi Gratis</span>
+                        <span><i class="fas fa-check-circle text-green-400"></i> Panduan KPR 0% DP</span>
+                        <span><i class="fas fa-check-circle text-green-400"></i> Bantuan Notaris</span>
+                    </div>
+                    <p class="text-xs mt-8 text-blue-200">*Promo berlaku hingga 30 hari ke depan, hanya untuk unit terbatas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
+            <div class="flex flex-wrap justify-center gap-6 mb-3">
+                <span class="font-semibold text-primary-dark">Mahaputra Property</span>
+                <span><i class="fas fa-map-marker-alt text-primary-dark mr-1"></i> Tarogong, Garut - Jawa Barat 44151</span>
+                <a href="#" class="hover:text-primary-dark"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#" class="hover:text-primary-dark"><i class="fab fa-facebook"></i> Facebook</a>
+            </div>
+            <p>&copy; 2025 Mahaputra Property. Perumahan impian dengan konsep modern & premium. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20info%20perumahan%20Mahaputra" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl z-50 hover:bg-green-600 transition-all duration-200 flex items-center justify-center w-14 h-14 md:w-16 md:h-16 group">
+        <i class="fab fa-whatsapp text-2xl md:text-3xl group-hover:scale-110 transition"></i>
+    </a>
+
+    <!-- JavaScript Hamburger Menu sederhana -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            // Tutup menu ketika link di mobile diklik (opsional)
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
